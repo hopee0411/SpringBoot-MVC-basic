@@ -5,6 +5,7 @@ import hy.SpringBoot.learn.repository.MemoryMemberRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
@@ -26,7 +27,8 @@ class MemberServiceTest {
         repository.clearStore();
     }
     @Test
-    void 회원가입() {
+    @DisplayName("회원가입")
+    void join() {
         //given 뭔가가 주어졌어
         Member member = new Member();
         member.setName("spring");
@@ -38,7 +40,8 @@ class MemberServiceTest {
     }
 
     @Test
-    void 중복_회원_예외() {
+    @DisplayName("중복 회원 예외")
+    void memberDuplicateException() {
         //given
         Member member1 = new Member();
         member1.setName("spring");
